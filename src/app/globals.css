@@ -23,3 +23,19 @@ input {
   width: 400px;
   padding: 5px 10px;
 }
+
+#search-btn {
+  background-color: #000;
+  position: absolute;
+  right: 0%;
+  top: 38%;
+  height: 60%;
+  width: 10%;
+  padding: 5px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+#search-btn img {
+  filter: invert(1);
+}
