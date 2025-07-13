@@ -35,8 +35,8 @@ input[type="text"]:focus {
   background-color: #087e8b;
   position: absolute;
   right: 0%;
-  top: 38%;
-  height: 60%;
+  top: 21px;
+  height: 61%;
   width: 10%;
   padding: 5px;
   border-top-right-radius: 7px;

@@ -1,8 +1,21 @@
 "use client";
-
-import Image from "next/image";
+import { handleSearch } from "@/utils/countryCodeGenerator";
+import { useState } from "react";
 
 export default function Home() {
+  const [searchInput, setSearchInput] = useState("");
+
+  const handleClick = async () => {
+    if (searchInput.trim() !== "") {
+      const countryCode = await handleSearch({ searchInput });
+      if (countryCode) {
+        console.log(`Country code for ${searchInput}: ${countryCode}`);
+      }
+    } else {
+      console.log("Please enter a valid search term.");
+    }
+  };
+
   return (
     <div
       id="section"
@@ -10,13 +23,25 @@ export default function Home() {
     >
       <h1>Essential news, globally filtered.</h1>
       <div className="relative">
-        <input name="search" type="text" placeholder="Search..." />
+        <input
+          name="search"
+          type="text"
+          placeholder="Search..."
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+        />
         <div id="search-btn">
-          <svg width="25px" height="25px" viewBox="0 0 32 32" version="1.1">
+          <svg
+            width="25px"
+            height="25px"
+            viewBox="0 0 32 32"
+            version="1.1"
+            onClick={handleClick}
+          >
             <g
               id="Page-1"
               stroke="none"
-              stroke-width="1"
+              strokeWidth="1"
               fill="none"
               fillRule="evenodd"
             >
